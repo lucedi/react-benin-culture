@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Couleurs culturelles béninoises - tons chauds et terreux */
+    --background: 30 25% 97%;
+    --foreground: 25 30% 15%;
+
+    --card: 30 20% 95%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 30 25% 97%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Marron principal - couleur culturelle */
+    --primary: 25 45% 35%;
+    --primary-foreground: 30 25% 97%;
+
+    /* Ocre doré */
+    --secondary: 35 50% 85%;
+    --secondary-foreground: 25 30% 15%;
+
+    --muted: 30 15% 90%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Or accent */
+    --accent: 40 70% 50%;
+    --accent-foreground: 25 30% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 30 25% 97%;
+
+    --border: 30 20% 85%;
+    --input: 30 20% 85%;
+    --ring: 25 45% 35%;
+
+    --radius: 0.75rem;
+
+    /* Couleurs personnalisées */
+    --terracotta: 15 55% 45%;
+    --ochre: 40 60% 55%;
+    --gold: 45 80% 55%;
+    --earth-dark: 20 35% 20%;
+    --cream: 35 30% 92%;
+    --sand: 35 25% 80%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(25 45% 35% / 0.9),
+      hsl(20 35% 20% / 0.95)
+    );
+    --gradient-card: linear-gradient(180deg, hsl(30 20% 95%), hsl(35 25% 90%));
+    --gradient-gold: linear-gradient(135deg, hsl(40 70% 50%), hsl(45 80% 55%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(25 45% 35% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(25 45% 35% / 0.2);
+    --shadow-glow: 0 0 40px hsl(40 70% 50% / 0.3);
+
+    --sidebar-background: 30 25% 97%;
+    --sidebar-foreground: 25 30% 15%;
+    --sidebar-primary: 25 45% 35%;
+    --sidebar-primary-foreground: 30 25% 97%;
+    --sidebar-accent: 35 50% 85%;
+    --sidebar-accent-foreground: 25 30% 15%;
+    --sidebar-border: 30 20% 85%;
+    --sidebar-ring: 25 45% 35%;
+  }
+
+  .dark {
+    --background: 20 25% 10%;
+    --foreground: 30 20% 92%;
+
+    --card: 20 20% 14%;
+    --card-foreground: 30 20% 92%;
+
+    --popover: 20 25% 10%;
+    --popover-foreground: 30 20% 92%;
+
+    --primary: 40 70% 50%;
+    --primary-foreground: 20 25% 10%;
+
+    --secondary: 25 30% 25%;
+    --secondary-foreground: 30 20% 92%;
+
+    --muted: 20 20% 18%;
+    --muted-foreground: 30 15% 60%;
+
+    --accent: 40 60% 55%;
+    --accent-foreground: 20 25% 10%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 30 20% 92%;
+
+    --border: 20 20% 20%;
+    --input: 20 20% 20%;
+    --ring: 40 70% 50%;
+
+    --sidebar-background: 20 25% 10%;
+    --sidebar-foreground: 30 20% 92%;
+    --sidebar-primary: 40 70% 50%;
+    --sidebar-primary-foreground: 20 25% 10%;
+    --sidebar-accent: 25 30% 25%;
+    --sidebar-accent-foreground: 30 20% 92%;
+    --sidebar-border: 20 20% 20%;
+    --sidebar-ring: 40 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
