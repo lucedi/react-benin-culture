@@ -61,7 +61,7 @@ const DiscoverSection = () => {
                 {/* IMAGE */}
                 <div className="relative h-48 overflow-hidden">
                   <img
-                    src={`/src/assets/img/${item.nom.toLowerCase()}.jpeg`}
+                    src={`/src/assets/img/${item?.nom?.toLowerCase()}.jpeg`}
                     alt={item.nom}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     onError={(e) => {
