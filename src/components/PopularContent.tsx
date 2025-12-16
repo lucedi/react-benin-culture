@@ -57,7 +57,8 @@ const PopularContent = () => {
     );
   };
 
-  const isPremium = (type_acces: string) => {
+  const isPremium = (type_acces: string | null | undefined) => {
+    if (!type_acces) return false;
     return type_acces.toLowerCase() !== "free";
   };
 
